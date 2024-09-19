@@ -30,7 +30,23 @@ h4.innerText = h4_text.substring(0, 50);
 // if (h4_text.length > 50) h4.innerText = h4_text.substring(0, 50) + "...";
 // else h4.innerText = h4_text;
 
-h4.innerText = h4_text.length > 30 ? h4_text.substring(0, 30) + "..." : h4_text;
+// h4.innerText = h4_text.length > 30 ? h4_text.substring(0, 30) + "..." : h4_text;
 
 //미션 - 위의 기능을 재사용하기 편하도록 함수로 패키징
-//shortenText('h3'
+shortenText("h1", 2);
+shortenText("h2", 3);
+shortenText("h3", 20);
+shortenText("h4", 30);
+
+function shortenText(elem, len) {
+	//첫번째 인수로 받은 문자값으로 DOM요소 선택
+	const el = document.querySelector(elem);
+	//해당요소의 문자값 변수에 할당
+	const el_text = el.innerText;
+
+	// const len = el.innerText.length;
+
+	//해당 돔요소에 innerText프로퍼티에 대입되는 우항을 3항연산자로 연산 처리 후 대입
+	el.innerText =
+		el_text.length > len ? el_text.substring(0, len) + "..." : el_text;
+}
