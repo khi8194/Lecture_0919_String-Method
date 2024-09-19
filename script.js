@@ -1,4 +1,4 @@
-aconsole.log("test");
+console.log("test");
 
 const h1 = document.querySelector("h1");
 h1.innerText = "Test";
